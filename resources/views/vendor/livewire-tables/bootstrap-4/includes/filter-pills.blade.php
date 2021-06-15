@@ -1,3 +1,4 @@
+<div>
 @if ($showFilters && count($this->getFiltersWithoutSearch()))
     <div class="mb-3">
         <small>@lang('Applied Filters'):</small>
@@ -38,3 +39,4 @@
         </a>
     </div>
 @endif
+</div>

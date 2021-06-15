@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/bs-4', function () {
+    return view('bs4');
+});
+
+Route::get('/bs-5', function () {
+    return view('bs5');
+});
+
+Route::get('/tailwind', function () {
+    return view('tw');
 });

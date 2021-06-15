@@ -1,13 +1,11 @@
 @if ($filtersView || count($customFilters))
-    <div class="btn-group d-block d-md-inline">
+    <div  class="btn-group d-block d-md-inline">
         <button type="button" class="btn dropdown-toggle d-block w-100 d-md-inline" data-bs-toggle="dropdown">
             @lang('Filters')
 
-            @if (count($this->getFiltersWithoutSearch()))
-                <span class="badge bg-info">
-                   {{ count($this->getFiltersWithoutSearch()) }}
-                </span>
-            @endif
+            <span id="filter-count-badge" class="badge badge-info {{count($this->getFiltersWithoutSearch()) ? '':'d-none'}}">
+                {{count($this->getFiltersWithoutSearch())}}
+            </span>
 
             <span class="caret"></span>
         </button>
@@ -31,18 +29,32 @@
                     @endforeach
                 @endif
 
-                @if (count($this->getFiltersWithoutSearch()))
+                <div id="filter-clear-button"
+                     class="{{count($this->getFiltersWithoutSearch()) ? '':'d-none'}}">
                     <div class="dropdown-divider"></div>
 
-                    <a
-                        href="#"
+                    <button
                         wire:click.prevent="resetFilters"
-                        class="dropdown-item"
+                        class="dropdown-item btn"
                     >
                         @lang('Clear')
-                    </a>
-                @endif
+                    </button>
+                </div>
             </li>
         </ul>
     </div>
 @endif
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        Livewire.on('updateFiltersCount', count => {
+            if (count > 0) {
+                $("#filter-count-badge").removeClass('d-none').text(count);
+                $("#filter-clear-button").removeClass('d-none');
+            } else {
+                $("#filter-count-badge").addClass('d-none');
+                $("#filter-clear-button").addClass('d-none');
+            }
+        })
+    });
+</script>

@@ -35,7 +35,6 @@ class UsersTable extends DataTableComponent
 
     public function filters(): array
     {
-
         return [
             'active' => Filter::make('User Name')
                               ->select([

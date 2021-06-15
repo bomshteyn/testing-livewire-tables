@@ -1,3 +1,4 @@
+<div>
 @if ($showFilters && count($this->getFiltersWithoutSearch()))
     <div class="mb-3">
         <small>@lang('Applied Filters'):</small>
@@ -15,8 +16,7 @@
                         {{ ucwords(strtr($value, ['_' => ' ', '-' => ' '])) }}
                     @endif
 
-                    <a
-                        href="#"
+                    <a href="#"
                         wire:click.prevent="removeFilter('{{ $key }}')"
                         class="text-white ms-2"
                     >
@@ -38,3 +38,4 @@
         </a>
     </div>
 @endif
+</div>
