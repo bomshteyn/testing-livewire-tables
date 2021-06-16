@@ -7,10 +7,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
     <livewire:styles />
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
 </head>
 <body>
-<div class="px-4 pt-5 my-5 text-center border-bottom">
-    <h1 class="display-4 fw-bold">BS - 5</h1>
+<div class="px-4 my-5 text-center border-bottom">
+    <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
     <p class="lead">Testing the BS - 5 Implementation</p>
 </div>
 <div class="container">

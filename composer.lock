@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e6f3f80f7c887ae8aaa87df37150b49c",
+    "content-hash": "11bcbf2f5d81e3ec5dc8c282871911ea",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -909,16 +909,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.46.0",
+            "version": "v8.47.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "a18266c612e0e6aba5e0174b3c873d2d217dccfb"
+                "reference": "93db226946453f4285558b7c3166ddb6e7ea5400"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/a18266c612e0e6aba5e0174b3c873d2d217dccfb",
-                "reference": "a18266c612e0e6aba5e0174b3c873d2d217dccfb",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/93db226946453f4285558b7c3166ddb6e7ea5400",
+                "reference": "93db226946453f4285558b7c3166ddb6e7ea5400",
                 "shasum": ""
             },
             "require": {
@@ -1073,7 +1073,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-06-08T13:36:46+00:00"
+            "time": "2021-06-15T14:00:32+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -1397,16 +1397,16 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "2.5.0",
+            "version": "v2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "5cffdbfe4204e0d932cde6f8c9bdf63f0928b4d4"
+                "reference": "a4ffb135693e7982e5b982ca203f5dc7a7ae1126"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/5cffdbfe4204e0d932cde6f8c9bdf63f0928b4d4",
-                "reference": "5cffdbfe4204e0d932cde6f8c9bdf63f0928b4d4",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/a4ffb135693e7982e5b982ca203f5dc7a7ae1126",
+                "reference": "a4ffb135693e7982e5b982ca203f5dc7a7ae1126",
                 "shasum": ""
             },
             "require": {
@@ -1457,7 +1457,7 @@
             "description": "A front-end framework for Laravel.",
             "support": {
                 "issues": "https://github.com/livewire/livewire/issues",
-                "source": "https://github.com/livewire/livewire/tree/2.5.0"
+                "source": "https://github.com/livewire/livewire/tree/v2.5.1"
             },
             "funding": [
                 {
@@ -1465,7 +1465,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-06-14T22:25:45+00:00"
+            "time": "2021-06-15T13:24:48+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -2512,16 +2512,16 @@
         },
         {
             "name": "rappasoft/laravel-livewire-tables",
-            "version": "dev-feature/date-filter",
+            "version": "v1.9.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/treeStoneIT/laravel-livewire-tables.git",
-                "reference": "29d4332ec7534f45f84612ddf23795c68dc000ec"
+                "url": "https://github.com/rappasoft/laravel-livewire-tables.git",
+                "reference": "210a87b0f4f48567c1e73f9af28499ad74f38978"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/treeStoneIT/laravel-livewire-tables/zipball/29d4332ec7534f45f84612ddf23795c68dc000ec",
-                "reference": "29d4332ec7534f45f84612ddf23795c68dc000ec",
+                "url": "https://api.github.com/repos/rappasoft/laravel-livewire-tables/zipball/210a87b0f4f48567c1e73f9af28499ad74f38978",
+                "reference": "210a87b0f4f48567c1e73f9af28499ad74f38978",
                 "shasum": ""
             },
             "require": {
@@ -2550,22 +2550,7 @@
                     "Rappasoft\\LaravelLivewireTables\\": "src"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Rappasoft\\LaravelLivewireTables\\Tests\\": "tests"
-                }
-            },
-            "scripts": {
-                "psalm": [
-                    "vendor/bin/psalm"
-                ],
-                "test": [
-                    "vendor/bin/phpunit --colors=always"
-                ],
-                "test-coverage": [
-                    "vendor/bin/phpunit --coverage-html coverage"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2586,15 +2571,16 @@
                 "tables"
             ],
             "support": {
-                "source": "https://github.com/treeStoneIT/laravel-livewire-tables/tree/feature/date-filter"
+                "issues": "https://github.com/rappasoft/laravel-livewire-tables/issues",
+                "source": "https://github.com/rappasoft/laravel-livewire-tables/tree/v1.9.0"
             },
             "funding": [
                 {
-                    "type": "github",
-                    "url": "https://github.com/rappasoft"
+                    "url": "https://github.com/rappasoft",
+                    "type": "github"
                 }
             ],
-            "time": "2021-06-11T05:07:13+00:00"
+            "time": "2021-06-15T17:39:30+00:00"
         },
         {
             "name": "spatie/laravel-package-tools",
@@ -7392,16 +7378,16 @@
         },
         {
             "name": "sebastian/type",
-            "version": "2.3.2",
+            "version": "2.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/type.git",
-                "reference": "0d1c587401514d17e8f9258a27e23527cb1b06c1"
+                "reference": "b8cd8a1c753c90bc1a0f5372170e3e489136f914"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/type/zipball/0d1c587401514d17e8f9258a27e23527cb1b06c1",
-                "reference": "0d1c587401514d17e8f9258a27e23527cb1b06c1",
+                "url": "https://api.github.com/repos/sebastianbergmann/type/zipball/b8cd8a1c753c90bc1a0f5372170e3e489136f914",
+                "reference": "b8cd8a1c753c90bc1a0f5372170e3e489136f914",
                 "shasum": ""
             },
             "require": {
@@ -7436,7 +7422,7 @@
             "homepage": "https://github.com/sebastianbergmann/type",
             "support": {
                 "issues": "https://github.com/sebastianbergmann/type/issues",
-                "source": "https://github.com/sebastianbergmann/type/tree/2.3.2"
+                "source": "https://github.com/sebastianbergmann/type/tree/2.3.4"
             },
             "funding": [
                 {
@@ -7444,7 +7430,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-06-04T13:02:07+00:00"
+            "time": "2021-06-15T12:49:02+00:00"
         },
         {
             "name": "sebastian/version",
@@ -7552,9 +7538,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "rappasoft/laravel-livewire-tables": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

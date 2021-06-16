@@ -7,10 +7,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <livewire:styles />
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
 </head>
 <body>
 <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <h1 class="display-4">BS - 4</h1>
+    <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/4.6/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
     <p class="lead">Testing the BS - 4 Implementation</p>
 </div>
 <div class="container">

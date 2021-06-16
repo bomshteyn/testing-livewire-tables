@@ -11,6 +11,8 @@ class UsersTable extends DataTableComponent
 {
     public $users;
 
+    public $test = [];
+
     public function mount()
     {
         $this->users = User::query()
