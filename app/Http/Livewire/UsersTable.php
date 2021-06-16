@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use Rappasoft\LaravelLivewireTables\Views\Filter;
@@ -11,7 +12,12 @@ class UsersTable extends DataTableComponent
 {
     public $users;
 
-    public $test = [];
+    protected $listeners = ['refreshUsersTable' => '$refresh'];
+
+    public array $bulkActions = [
+        'activate' => 'Activate',
+        'deactivate' => 'Deactivate',
+    ];
 
     public function mount()
     {
@@ -30,6 +36,8 @@ class UsersTable extends DataTableComponent
             Column::make('E-mail', 'email')
                   ->sortable()
                   ->searchable(),
+            Column::make('Active')
+                  ->sortable(),
             Column::make('Verified', 'email_verified_at')
                   ->sortable(),
         ];
@@ -38,7 +46,7 @@ class UsersTable extends DataTableComponent
     public function filters(): array
     {
         return [
-            'active' => Filter::make('User Name')
+            'userName' => Filter::make('User Name')
                               ->select([
                                   '' => 'Any',
                                   ...$this->users
@@ -52,11 +60,26 @@ class UsersTable extends DataTableComponent
         ];
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Relations\Relation
-     */
     public function query()
     {
         return User::query();
+    }
+
+    public function activate()
+    {
+        if ($this->selectedRowsQuery->count() > 0) {
+            User::whereIn('id', $this->selectedKeys())
+                ->update(['active' => true]);
+        }
+        $this->emit('refreshUsersTable');
+    }
+
+    public function deactivate()
+    {
+        if ($this->selectedRowsQuery->count() > 0) {
+            User::whereIn('id', $this->selectedKeys())
+                ->update(['active' => false]);
+        }
+        $this->emit('refreshUsersTable');
     }
 }
