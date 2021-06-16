@@ -10,22 +10,13 @@ use Rappasoft\LaravelLivewireTables\Views\Filter;
 
 class UsersTable extends DataTableComponent
 {
-    public $users;
 
     protected $listeners = ['refreshUsersTable' => '$refresh'];
 
     public array $bulkActions = [
-        'activate' => 'Activate',
+        'activate'   => 'Activate',
         'deactivate' => 'Deactivate',
     ];
-
-    public function mount()
-    {
-        $this->users = User::query()
-                           ->get(['id','name'])
-                           ->pluck('name','id')
-                           ->toArray();
-    }
 
     public function columns(): array
     {
@@ -37,7 +28,14 @@ class UsersTable extends DataTableComponent
                   ->sortable()
                   ->searchable(),
             Column::make('Active')
-                  ->sortable(),
+                  ->sortable()
+                  ->format(function ($value, $column, $row) {
+                      return view('tables.cells.boolean',
+                          [
+                              'boolean' => $value
+                          ]
+                      );
+                  }),
             Column::make('Verified', 'email_verified_at')
                   ->sortable(),
         ];
@@ -46,23 +44,33 @@ class UsersTable extends DataTableComponent
     public function filters(): array
     {
         return [
-            'userName' => Filter::make('User Name')
-                              ->select([
-                                  '' => 'Any',
-                                  ...$this->users
-                              ]),
             'verified' => Filter::make('E-mail Verified')
                                 ->select([
-                                    '' => 'Any',
+                                    ''    => 'Any',
                                     'yes' => 'Yes',
-                                    'no' => 'No',
+                                    'no'  => 'No',
+                                ]),
+            'active'   => Filter::make('Active')
+                                ->select([
+                                    ''    => 'Any',
+                                    'yes' => 'Yes',
+                                    'no'  => 'No',
                                 ]),
         ];
     }
 
     public function query()
     {
-        return User::query();
+        return User::query()
+                   ->when($this->getFilter('verified'), function ($query, $verified) {
+                       if ($verified === 'yes') {
+                           return $query->whereNotNull('verified');
+                       }
+
+                       return $query->whereNull('verified');
+                   })
+                   ->when($this->getFilter('active'), fn($query, $active) => $query->where('active', $active === 'yes'));
+
     }
 
     public function activate()
